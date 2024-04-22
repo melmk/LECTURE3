@@ -12,4 +12,6 @@ def david(request):
     return HttpResponse("Hello, David!")
 
 def greet(request, name):
-    return HttpResponse(f"Hello, {name.capitalize()}")
+    return render(request, "hello/greet.html", {
+        "name": name.capitalize()
+    })      # third input is the 'context' we want to provide to the html template i.e variables
